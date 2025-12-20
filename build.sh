@@ -11,7 +11,7 @@ pushd luajit
 make amalg -j4
 popd
 
-pushd luanti
+pushd erbium
 mkdir -p build; cd build
 
 # Download appimagetool
@@ -32,26 +32,26 @@ cmake .. -G Ninja \
 	-DLUA_LIBRARY=../../luajit/src/libluajit.a
 ninja
 
-objcopy --only-keep-debug ../bin/luanti luanti.debug
-objcopy --strip-debug --add-gnu-debuglink=luanti.debug ../bin/luanti
+objcopy --only-keep-debug ../bin/erbium erbium.debug
+objcopy --strip-debug --add-gnu-debuglink=erbium.debug ../bin/erbium
 
 ninja install
 
 cd AppDir
 
 # Put desktop and icon at root
-ln -sf usr/share/applications/org.luanti.luanti.desktop luanti.desktop
-ln -sf usr/share/icons/hicolor/128x128/apps/luanti.png luanti.png
-ln -sf luanti.png .DirIcon
+ln -sf usr/share/applications/org.erbium.erbium.desktop erbium.desktop
+ln -sf usr/share/icons/hicolor/128x128/apps/erbium.png erbium.png
+ln -sf erbium.png .DirIcon
 
 # Fix locales
-mv usr/share/locale usr/share/luanti
+mv usr/share/locale usr/share/erbium
 
 cat > AppRun <<\APPRUN
 #!/bin/sh
 APP_PATH="$(dirname "$(readlink -f "${0}")")"
 export LD_LIBRARY_PATH="${APP_PATH}"/usr/lib/:"${LD_LIBRARY_PATH}"
-exec "${APP_PATH}/usr/bin/luanti" "$@"
+exec "${APP_PATH}/usr/bin/erbium" "$@"
 APPRUN
 chmod +x AppRun
 

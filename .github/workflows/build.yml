@@ -21,12 +21,12 @@ jobs:
           wget https://github.com/principia-game/linux-deps/releases/download/latest/deps.tar.gz -O linux-deps.tar.gz
           tar -xaf linux-deps.tar.gz -C /
 
-      - name: Checkout Luanti src
+      - name: Checkout erbium src
         uses: actions/checkout@v4
         with:
-          repository: minetest/minetest
-          path: luanti
-          ref: 5.14.0
+          repository: IonicCheese/erbium
+          path: erbium
+          ref: <commit-hash-here>
 
       - name: Checkout LuaJIT src
         uses: actions/checkout@v4
@@ -40,12 +40,13 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: luanti
-          path: luanti/build/*.AppImage
+          name: erbium
+          path: erbium/build/*.AppImage
           if-no-files-found: error
 
       - uses: actions/upload-artifact@v4
         with:
-          name: luanti.debug
-          path: luanti/build/luanti.debug
+          name: erbium.debug
+          path: erbium/build/erbium.debug
           if-no-files-found: error
+
