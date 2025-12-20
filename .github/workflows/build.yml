@@ -26,7 +26,7 @@ jobs:
         with:
           repository: IonicCheese/erbium
           path: erbium
-          ref: <commit-hash-here>
+          ref: 5518b1cb583afb1853c58e1f3bd3cb920cf98379
 
       - name: Checkout LuaJIT src
         uses: actions/checkout@v4
