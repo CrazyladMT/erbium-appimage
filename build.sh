@@ -37,12 +37,7 @@ objcopy --strip-debug --add-gnu-debuglink=erbium.debug ../bin/erbium
 
 ninja install
 
-echo "PWD is: $(pwd)"
-echo "All folders under ../../../:"
-find ../../../ -type d
-
-
-cp ../../../misc/erbium-xorg-icon-128.png AppDir/usr/share/icons/hicolor/128x128/apps/erbium.png
+cp ../../../erbium-appimage/erbium/misc/erbium-xorg-icon-128.png AppDir/usr/share/icons/hicolor/128x128/apps/erbium.png
 
 cd AppDir
 
