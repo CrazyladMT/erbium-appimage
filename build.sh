@@ -39,6 +39,16 @@ ninja install
 
 cd AppDir
 
+cat > usr/share/applications/org.erbium.erbium.desktop <<EOF
+[Desktop Entry]
+Type=Application
+Name=Erbium
+Exec=usr/bin/erbium
+Icon=erbium
+Categories=Game;
+Terminal=false
+EOF
+
 # Put desktop and icon at root
 ln -sf usr/share/applications/org.erbium.erbium.desktop erbium.desktop
 ln -sf usr/share/icons/hicolor/128x128/apps/erbium.png erbium.png
