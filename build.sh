@@ -37,7 +37,7 @@ objcopy --strip-debug --add-gnu-debuglink=erbium.debug ../bin/erbium
 
 ninja install
 
-cp ../misc/erbium-xorg-icon-128.png /usr/share/icons/hicolor/128x128/apps/erbium.png
+cp ../../../misc/erbium-xorg-icon-128.png AppDir/usr/share/icons/hicolor/128x128/apps/erbium.png
 
 cd AppDir
 
